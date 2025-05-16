@@ -1,3 +1,5 @@
+using App_Clinica.Views;
+
 namespace App_Clinica
 {
     public partial class Login : Form
@@ -82,28 +84,36 @@ namespace App_Clinica
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (txt_Usuario.Text != "Usuario")
-            {
-                if (txt_Pass.Text != "Contraseña")
-                {
-                   // if ()
-                   // {
-                    //}
-                    //else
-                    //{
-                        //msgError("Incorrect username or password entered. \n Please try again.");
-                        
-                    //}
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
+            //if (txt_Usuario.Text != "Usuario")
+            //{
+            //    if (txt_Pass.Text != "Contraseña")
+            //    {
+            //        // if ()
+            //        // {
+            //        //}
+            //        //else
+            //        //{
+            //        //msgError("Incorrect username or password entered. \n Please try again.");
 
-                }
-                else msgError("Por favor, introduzca la contraseña.");
-            }
-            else msgError("Por favor, introduzca su nombre de usuario.");
+            //        //}
+
+            //    }
+            //    else msgError("Por favor, introduzca la contraseña.");
+            //}
+            //else msgError("Por favor, introduzca su nombre de usuario.");
         }
         private void msgError(string msg)
         {
             lb_Error.Text = "   " + msg;
             lb_Error.Visible = true;
+        }
+
+        private void lb_Name_Clinica_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

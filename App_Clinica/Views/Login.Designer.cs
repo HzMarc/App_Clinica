@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnl_Fondo = new Panel();
+            lb_Error = new Label();
             panel1 = new Panel();
             btn_Salir = new Button();
             linkLabel1 = new LinkLabel();
@@ -41,7 +42,6 @@
             pnl_Lateral = new Panel();
             lb_Name_Clinica = new Label();
             img_Logo_Blanco = new PictureBox();
-            lb_Error = new Label();
             pnl_Fondo.SuspendLayout();
             panel1.SuspendLayout();
             pnl_Lateral.SuspendLayout();
@@ -66,6 +66,20 @@
             pnl_Fondo.Name = "pnl_Fondo";
             pnl_Fondo.Size = new Size(780, 330);
             pnl_Fondo.TabIndex = 0;
+            // 
+            // lb_Error
+            // 
+            lb_Error.AutoSize = true;
+            lb_Error.Font = new Font("MS Reference Sans Serif", 10.5F);
+            lb_Error.ForeColor = Color.DarkGray;
+            lb_Error.Image = Properties.Resources.Box_Important;
+            lb_Error.ImageAlign = ContentAlignment.MiddleLeft;
+            lb_Error.Location = new Point(304, 190);
+            lb_Error.Name = "lb_Error";
+            lb_Error.Size = new Size(44, 18);
+            lb_Error.TabIndex = 6;
+            lb_Error.Text = "Error";
+            lb_Error.Visible = false;
             // 
             // panel1
             // 
@@ -107,6 +121,7 @@
             // btn_Login
             // 
             btn_Login.BackColor = Color.FromArgb(40, 40, 40);
+            btn_Login.Cursor = Cursors.Hand;
             btn_Login.FlatAppearance.BorderSize = 0;
             btn_Login.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btn_Login.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
@@ -201,8 +216,9 @@
             lb_Name_Clinica.Name = "lb_Name_Clinica";
             lb_Name_Clinica.Size = new Size(174, 61);
             lb_Name_Clinica.TabIndex = 1;
-            lb_Name_Clinica.Text = "Clinica el Cerro Colorado";
+            lb_Name_Clinica.Text = "Clinica MedCare";
             lb_Name_Clinica.TextAlign = ContentAlignment.MiddleCenter;
+            lb_Name_Clinica.Click += lb_Name_Clinica_Click;
             // 
             // img_Logo_Blanco
             // 
@@ -212,20 +228,6 @@
             img_Logo_Blanco.Size = new Size(169, 155);
             img_Logo_Blanco.TabIndex = 0;
             img_Logo_Blanco.TabStop = false;
-            // 
-            // lb_Error
-            // 
-            lb_Error.AutoSize = true;
-            lb_Error.Font = new Font("MS Reference Sans Serif", 10.5F);
-            lb_Error.ForeColor = Color.DarkGray;
-            lb_Error.Image = Properties.Resources.Box_Important;
-            lb_Error.ImageAlign = ContentAlignment.MiddleLeft;
-            lb_Error.Location = new Point(304, 190);
-            lb_Error.Name = "lb_Error";
-            lb_Error.Size = new Size(44, 18);
-            lb_Error.TabIndex = 6;
-            lb_Error.Text = "Error";
-            lb_Error.Visible = false;
             // 
             // Login
             // 

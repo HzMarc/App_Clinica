@@ -73,6 +73,26 @@ namespace App_Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_Azul1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Azul1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Azul1__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Azul1 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Blanco {
             get {
                 object obj = ResourceManager.GetObject("Logo_Blanco", resourceCulture);
@@ -86,6 +106,16 @@ namespace App_Clinica.Properties {
         internal static System.Drawing.Bitmap Logo_Blanco1 {
             get {
                 object obj = ResourceManager.GetObject("Logo_Blanco1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Blanco1_Menu {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Blanco1_Menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
