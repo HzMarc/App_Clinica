@@ -63,9 +63,8 @@
             pnl_Fondo.Controls.Add(pnl_Lateral);
             pnl_Fondo.Dock = DockStyle.Fill;
             pnl_Fondo.Location = new Point(0, 0);
-            pnl_Fondo.Margin = new Padding(3, 4, 3, 4);
             pnl_Fondo.Name = "pnl_Fondo";
-            pnl_Fondo.Size = new Size(891, 440);
+            pnl_Fondo.Size = new Size(780, 330);
             pnl_Fondo.TabIndex = 0;
             // 
             // lb_Error
@@ -75,9 +74,9 @@
             lb_Error.ForeColor = Color.DarkGray;
             lb_Error.Image = Properties.Resources.Box_Important;
             lb_Error.ImageAlign = ContentAlignment.MiddleLeft;
-            lb_Error.Location = new Point(347, 253);
+            lb_Error.Location = new Point(304, 190);
             lb_Error.Name = "lb_Error";
-            lb_Error.Size = new Size(56, 23);
+            lb_Error.Size = new Size(44, 18);
             lb_Error.TabIndex = 6;
             lb_Error.Text = "Error";
             lb_Error.Visible = false;
@@ -86,10 +85,9 @@
             // 
             panel1.Controls.Add(btn_Salir);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(286, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(250, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(605, 25);
+            panel1.Size = new Size(530, 19);
             panel1.TabIndex = 2;
             panel1.MouseMove += panel1_MouseMove;
             // 
@@ -100,10 +98,9 @@
             btn_Salir.FlatAppearance.MouseOverBackColor = Color.Red;
             btn_Salir.FlatStyle = FlatStyle.Flat;
             btn_Salir.Image = Properties.Resources.x_;
-            btn_Salir.Location = new Point(579, -1);
-            btn_Salir.Margin = new Padding(3, 4, 3, 4);
+            btn_Salir.Location = new Point(507, -1);
             btn_Salir.Name = "btn_Salir";
-            btn_Salir.Size = new Size(26, 27);
+            btn_Salir.Size = new Size(23, 20);
             btn_Salir.TabIndex = 7;
             btn_Salir.UseVisualStyleBackColor = true;
             btn_Salir.Click += btn_Salir_Click;
@@ -114,12 +111,12 @@
             linkLabel1.AutoSize = true;
             linkLabel1.ForeColor = Color.DimGray;
             linkLabel1.LinkColor = Color.DimGray;
-            linkLabel1.Location = new Point(519, 395);
+            linkLabel1.Location = new Point(434, 295);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(185, 20);
+            linkLabel1.Size = new Size(157, 15);
             linkLabel1.TabIndex = 0;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "¿Ha olvidado su contraña?";
+            linkLabel1.Text = "¿Ha olvidado su contraseña?";
             // 
             // btn_Login
             // 
@@ -130,10 +127,9 @@
             btn_Login.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btn_Login.FlatStyle = FlatStyle.Flat;
             btn_Login.ForeColor = Color.Gainsboro;
-            btn_Login.Location = new Point(421, 323);
-            btn_Login.Margin = new Padding(3, 4, 3, 4);
+            btn_Login.Location = new Point(368, 242);
             btn_Login.Name = "btn_Login";
-            btn_Login.Size = new Size(329, 47);
+            btn_Login.Size = new Size(288, 35);
             btn_Login.TabIndex = 3;
             btn_Login.Text = "ACCEDER";
             btn_Login.UseVisualStyleBackColor = false;
@@ -144,9 +140,9 @@
             lb_Iniciar.AutoSize = true;
             lb_Iniciar.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lb_Iniciar.ForeColor = Color.DimGray;
-            lb_Iniciar.Location = new Point(477, 43);
+            lb_Iniciar.Location = new Point(417, 32);
             lb_Iniciar.Name = "lb_Iniciar";
-            lb_Iniciar.Size = new Size(262, 40);
+            lb_Iniciar.Size = new Size(206, 33);
             lb_Iniciar.TabIndex = 5;
             lb_Iniciar.Text = "INICIAR SESIÓN";
             // 
@@ -156,10 +152,9 @@
             txt_Pass.BorderStyle = BorderStyle.None;
             txt_Pass.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_Pass.ForeColor = Color.DimGray;
-            txt_Pass.Location = new Point(347, 201);
-            txt_Pass.Margin = new Padding(3, 4, 3, 4);
+            txt_Pass.Location = new Point(304, 151);
             txt_Pass.Name = "txt_Pass";
-            txt_Pass.Size = new Size(448, 25);
+            txt_Pass.Size = new Size(392, 20);
             txt_Pass.TabIndex = 2;
             txt_Pass.Text = "Contraseña";
             txt_Pass.Enter += txt_Pass_Enter;
@@ -171,10 +166,9 @@
             txt_Usuario.BorderStyle = BorderStyle.None;
             txt_Usuario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_Usuario.ForeColor = Color.DimGray;
-            txt_Usuario.Location = new Point(347, 128);
-            txt_Usuario.Margin = new Padding(3, 4, 3, 4);
+            txt_Usuario.Location = new Point(304, 96);
             txt_Usuario.Name = "txt_Usuario";
-            txt_Usuario.Size = new Size(448, 25);
+            txt_Usuario.Size = new Size(392, 20);
             txt_Usuario.TabIndex = 1;
             txt_Usuario.Text = "Usuario";
             txt_Usuario.Enter += txt_Usuario_Enter;
@@ -185,9 +179,9 @@
             lb_Usuario.AutoSize = true;
             lb_Usuario.BackColor = Color.FromArgb(15, 15, 15);
             lb_Usuario.ForeColor = Color.White;
-            lb_Usuario.Location = new Point(347, 139);
+            lb_Usuario.Location = new Point(304, 104);
             lb_Usuario.Name = "lb_Usuario";
-            lb_Usuario.Size = new Size(471, 20);
+            lb_Usuario.Size = new Size(392, 15);
             lb_Usuario.TabIndex = 1;
             lb_Usuario.Text = "_____________________________________________________________________________";
             // 
@@ -196,9 +190,9 @@
             lb_Pass.AutoSize = true;
             lb_Pass.BackColor = Color.Transparent;
             lb_Pass.ForeColor = Color.White;
-            lb_Pass.Location = new Point(347, 211);
+            lb_Pass.Location = new Point(304, 158);
             lb_Pass.Name = "lb_Pass";
-            lb_Pass.Size = new Size(471, 20);
+            lb_Pass.Size = new Size(392, 15);
             lb_Pass.TabIndex = 4;
             lb_Pass.Text = "_____________________________________________________________________________";
             // 
@@ -209,9 +203,8 @@
             pnl_Lateral.Controls.Add(img_Logo_Blanco);
             pnl_Lateral.Dock = DockStyle.Left;
             pnl_Lateral.Location = new Point(0, 0);
-            pnl_Lateral.Margin = new Padding(3, 4, 3, 4);
             pnl_Lateral.Name = "pnl_Lateral";
-            pnl_Lateral.Size = new Size(286, 440);
+            pnl_Lateral.Size = new Size(250, 330);
             pnl_Lateral.TabIndex = 0;
             pnl_Lateral.MouseMove += pnl_Lateral_MouseMove;
             // 
@@ -219,9 +212,9 @@
             // 
             lb_Name_Clinica.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_Name_Clinica.ForeColor = Color.White;
-            lb_Name_Clinica.Location = new Point(41, 271);
+            lb_Name_Clinica.Location = new Point(36, 203);
             lb_Name_Clinica.Name = "lb_Name_Clinica";
-            lb_Name_Clinica.Size = new Size(199, 81);
+            lb_Name_Clinica.Size = new Size(174, 61);
             lb_Name_Clinica.TabIndex = 1;
             lb_Name_Clinica.Text = "Clinica MedCare";
             lb_Name_Clinica.TextAlign = ContentAlignment.MiddleCenter;
@@ -230,21 +223,19 @@
             // img_Logo_Blanco
             // 
             img_Logo_Blanco.Image = Properties.Resources.Logo_Blanco1;
-            img_Logo_Blanco.Location = new Point(41, 84);
-            img_Logo_Blanco.Margin = new Padding(3, 4, 3, 4);
+            img_Logo_Blanco.Location = new Point(36, 63);
             img_Logo_Blanco.Name = "img_Logo_Blanco";
-            img_Logo_Blanco.Size = new Size(193, 207);
+            img_Logo_Blanco.Size = new Size(169, 155);
             img_Logo_Blanco.TabIndex = 0;
             img_Logo_Blanco.TabStop = false;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(891, 440);
+            ClientSize = new Size(780, 330);
             Controls.Add(pnl_Fondo);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

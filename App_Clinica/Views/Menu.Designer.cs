@@ -153,7 +153,7 @@
             btn_AggMedic.Name = "btn_AggMedic";
             btn_AggMedic.Size = new Size(205, 51);
             btn_AggMedic.TabIndex = 1;
-            btn_AggMedic.Text = "Aggregar Medico";
+            btn_AggMedic.Text = "Agregar Medico";
             btn_AggMedic.UseVisualStyleBackColor = true;
             btn_AggMedic.Click += btn_AggMedic_Click;
             // 
