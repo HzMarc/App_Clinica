@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Data.SqlClient;
 
-namespace App_Clinica
+namespace App_Clinica.DataAccess
 {
     public class Conexion
     {
