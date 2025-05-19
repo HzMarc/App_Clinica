@@ -6,6 +6,7 @@ namespace App_Clinica
     {
         int posx = 0;
         int posy = 0;
+        private bool _mostrarContrasena = false;
         public Login()
         {
             InitializeComponent();
@@ -87,23 +88,23 @@ namespace App_Clinica
             Menu menu = new Menu();
             menu.Show();
             this.Hide();
-            //if (txt_Usuario.Text != "Usuario")
-            //{
-            //    if (txt_Pass.Text != "Contraseña")
-            //    {
-            //        // if ()
-            //        // {
-            //        //}
-            //        //else
-            //        //{
-            //        //msgError("Incorrect username or password entered. \n Please try again.");
+            if (txt_Usuario.Text != "Usuario")
+            {
+                if (txt_Pass.Text != "Contraseña")
+                {
+                    // if ()
+                    // {
+                    //}
+                    //else
+                    //{
+                    //msgError("Incorrect username or password entered. \n Please try again.");
 
-            //        //}
+                    //}
 
-            //    }
-            //    else msgError("Por favor, introduzca la contraseña.");
-            //}
-            //else msgError("Por favor, introduzca su nombre de usuario.");
+                }
+                else msgError("Por favor, introduzca la contraseña.");
+            }
+            else msgError("Por favor, introduzca su nombre de usuario.");
         }
         private void msgError(string msg)
         {
@@ -111,9 +112,20 @@ namespace App_Clinica
             lb_Error.Visible = true;
         }
 
-        private void lb_Name_Clinica_Click(object sender, EventArgs e)
+        private void btnSee_Click(object sender, EventArgs e)
         {
+            _mostrarContrasena = !_mostrarContrasena;
 
+            if (_mostrarContrasena)
+            {
+                txt_Pass.PasswordChar = '\0';
+                btnSee.Image = Image.FromFile("Resources\\Blind.png");
+            }
+            else
+            {
+                txt_Pass.PasswordChar = '•';
+                btnSee.Image = Image.FromFile("Resources\\Eye.png");
+            }
         }
     }
 }

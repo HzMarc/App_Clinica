@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             pnl_Fondo = new Panel();
+            picPass = new PictureBox();
+            btnSee = new Button();
+            picUser = new PictureBox();
             lb_Error = new Label();
             panel1 = new Panel();
             btn_Salir = new Button();
@@ -43,6 +46,8 @@
             lb_Name_Clinica = new Label();
             img_Logo_Blanco = new PictureBox();
             pnl_Fondo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picPass).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             panel1.SuspendLayout();
             pnl_Lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)img_Logo_Blanco).BeginInit();
@@ -51,6 +56,9 @@
             // pnl_Fondo
             // 
             pnl_Fondo.BackColor = Color.FromArgb(15, 15, 15);
+            pnl_Fondo.Controls.Add(picPass);
+            pnl_Fondo.Controls.Add(btnSee);
+            pnl_Fondo.Controls.Add(picUser);
             pnl_Fondo.Controls.Add(lb_Error);
             pnl_Fondo.Controls.Add(panel1);
             pnl_Fondo.Controls.Add(linkLabel1);
@@ -66,6 +74,36 @@
             pnl_Fondo.Name = "pnl_Fondo";
             pnl_Fondo.Size = new Size(780, 330);
             pnl_Fondo.TabIndex = 0;
+            // 
+            // picPass
+            // 
+            picPass.Image = Properties.Resources.Password;
+            picPass.Location = new Point(283, 151);
+            picPass.Name = "picPass";
+            picPass.Size = new Size(20, 20);
+            picPass.TabIndex = 9;
+            picPass.TabStop = false;
+            // 
+            // btnSee
+            // 
+            btnSee.FlatAppearance.BorderSize = 0;
+            btnSee.FlatStyle = FlatStyle.Flat;
+            btnSee.Image = Properties.Resources.Eye;
+            btnSee.Location = new Point(662, 148);
+            btnSee.Name = "btnSee";
+            btnSee.Size = new Size(24, 20);
+            btnSee.TabIndex = 8;
+            btnSee.UseVisualStyleBackColor = true;
+            btnSee.Click += btnSee_Click;
+            // 
+            // picUser
+            // 
+            picUser.Image = Properties.Resources.User;
+            picUser.Location = new Point(283, 96);
+            picUser.Name = "picUser";
+            picUser.Size = new Size(20, 20);
+            picUser.TabIndex = 7;
+            picUser.TabStop = false;
             // 
             // lb_Error
             // 
@@ -154,7 +192,7 @@
             txt_Pass.ForeColor = Color.DimGray;
             txt_Pass.Location = new Point(304, 151);
             txt_Pass.Name = "txt_Pass";
-            txt_Pass.Size = new Size(392, 20);
+            txt_Pass.Size = new Size(352, 20);
             txt_Pass.TabIndex = 2;
             txt_Pass.Text = "Contraseña";
             txt_Pass.Enter += txt_Pass_Enter;
@@ -168,7 +206,7 @@
             txt_Usuario.ForeColor = Color.DimGray;
             txt_Usuario.Location = new Point(304, 96);
             txt_Usuario.Name = "txt_Usuario";
-            txt_Usuario.Size = new Size(392, 20);
+            txt_Usuario.Size = new Size(386, 20);
             txt_Usuario.TabIndex = 1;
             txt_Usuario.Text = "Usuario";
             txt_Usuario.Enter += txt_Usuario_Enter;
@@ -179,22 +217,22 @@
             lb_Usuario.AutoSize = true;
             lb_Usuario.BackColor = Color.FromArgb(15, 15, 15);
             lb_Usuario.ForeColor = Color.White;
-            lb_Usuario.Location = new Point(304, 104);
+            lb_Usuario.Location = new Point(281, 104);
             lb_Usuario.Name = "lb_Usuario";
-            lb_Usuario.Size = new Size(392, 15);
+            lb_Usuario.Size = new Size(412, 15);
             lb_Usuario.TabIndex = 1;
-            lb_Usuario.Text = "_____________________________________________________________________________";
+            lb_Usuario.Text = "_________________________________________________________________________________";
             // 
             // lb_Pass
             // 
             lb_Pass.AutoSize = true;
             lb_Pass.BackColor = Color.Transparent;
             lb_Pass.ForeColor = Color.White;
-            lb_Pass.Location = new Point(304, 158);
+            lb_Pass.Location = new Point(281, 158);
             lb_Pass.Name = "lb_Pass";
-            lb_Pass.Size = new Size(392, 15);
+            lb_Pass.Size = new Size(412, 15);
             lb_Pass.TabIndex = 4;
-            lb_Pass.Text = "_____________________________________________________________________________";
+            lb_Pass.Text = "_________________________________________________________________________________";
             // 
             // pnl_Lateral
             // 
@@ -218,7 +256,6 @@
             lb_Name_Clinica.TabIndex = 1;
             lb_Name_Clinica.Text = "Clinica MedCare";
             lb_Name_Clinica.TextAlign = ContentAlignment.MiddleCenter;
-            lb_Name_Clinica.Click += lb_Name_Clinica_Click;
             // 
             // img_Logo_Blanco
             // 
@@ -241,6 +278,8 @@
             Text = "Form1";
             pnl_Fondo.ResumeLayout(false);
             pnl_Fondo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picPass).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             panel1.ResumeLayout(false);
             pnl_Lateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)img_Logo_Blanco).EndInit();
@@ -263,5 +302,8 @@
         private Label lb_Name_Clinica;
         private Panel panel1;
         private Label lb_Error;
+        private PictureBox picUser;
+        private Button btnSee;
+        private PictureBox picPass;
     }
 }
