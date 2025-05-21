@@ -10,7 +10,7 @@ namespace App_Clinica.DataAccess
 
         public Conexion()
         {
-            cadenaConexion = "Server=DESKTOP-1LBQ6O2;Database=BDPrueba;User Id=sa;Password=V7#pRw9z2@LmXQf&;";
+            cadenaConexion = "Server=DESKTOP-1LBQ6O2;Database=BDPrueba;User Id=sa;Password=V7#pRw9z2@LmXQf&;;TrustServerCertificate=True;";
             conexion = new SqlConnection(cadenaConexion);
         }
 

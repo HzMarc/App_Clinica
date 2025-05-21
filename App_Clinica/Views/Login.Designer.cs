@@ -107,14 +107,13 @@
             // 
             // lb_Error
             // 
-            lb_Error.AutoSize = true;
             lb_Error.Font = new Font("MS Reference Sans Serif", 10.5F);
             lb_Error.ForeColor = Color.DarkGray;
             lb_Error.Image = Properties.Resources.Box_Important;
-            lb_Error.ImageAlign = ContentAlignment.MiddleLeft;
+            lb_Error.ImageAlign = ContentAlignment.TopLeft;
             lb_Error.Location = new Point(304, 190);
             lb_Error.Name = "lb_Error";
-            lb_Error.Size = new Size(44, 18);
+            lb_Error.Size = new Size(382, 40);
             lb_Error.TabIndex = 6;
             lb_Error.Text = "Error";
             lb_Error.Visible = false;

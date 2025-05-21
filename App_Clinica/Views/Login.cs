@@ -1,3 +1,4 @@
+using App_Clinica.DataAccess;
 using App_Clinica.Views;
 
 namespace App_Clinica
@@ -85,26 +86,28 @@ namespace App_Clinica
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
-            this.Hide();
-            if (txt_Usuario.Text != "Usuario")
+            if (txt_Usuario.Text == "Usuario" || string.IsNullOrWhiteSpace(txt_Usuario.Text))
             {
-                if (txt_Pass.Text != "Contraseña")
-                {
-                    // if ()
-                    // {
-                    //}
-                    //else
-                    //{
-                    //msgError("Incorrect username or password entered. \n Please try again.");
-
-                    //}
-
-                }
-                else msgError("Por favor, introduzca la contraseña.");
+                msgError("Por favor, introduzca su nombre de usuario.");
+                return;
             }
-            else msgError("Por favor, introduzca su nombre de usuario.");
+            if (txt_Pass.Text == "Contraseña" || string.IsNullOrWhiteSpace(txt_Pass.Text))
+            {
+                msgError("Por favor, introduzca la contraseña.");
+                return;
+            }
+            string rol = AutenticacionService.IniciarSesion(txt_Usuario.Text, txt_Pass.Text);
+
+            if (rol != null)
+            {
+                Menu menu = new Menu();
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                msgError("Nombre de usuario o contraseña incorrectos. \nPor favor, inténtelo de nuevo.");
+            }
         }
         private void msgError(string msg)
         {
