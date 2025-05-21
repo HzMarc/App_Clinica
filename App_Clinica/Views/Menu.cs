@@ -38,5 +38,10 @@ namespace App_Clinica.Views
             agregar_Medico.Show();
             this.Hide();
         }
+
+        private void lbWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
