@@ -32,16 +32,18 @@ namespace App_Clinica.Views
             }
         }
 
-        private void btn_AggMedic_Click(object sender, EventArgs e)
+        private void btnAggPac_Click(object sender, EventArgs e)
+        {
+            Agregar_Paciente agregar_Paciente = new Agregar_Paciente();
+            agregar_Paciente.Show();
+            this.Hide();
+        }
+
+        private void btnAggMed_Click(object sender, EventArgs e)
         {
             Agregar_Medico agregar_Medico = new Agregar_Medico();
             agregar_Medico.Show();
             this.Hide();
-        }
-
-        private void lbWelcome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

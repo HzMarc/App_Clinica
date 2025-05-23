@@ -34,7 +34,7 @@
             picUser = new PictureBox();
             lb_Error = new Label();
             panel1 = new Panel();
-            btn_Salir = new Button();
+            btnSalir = new Button();
             linkLabel1 = new LinkLabel();
             btn_Login = new Button();
             lb_Iniciar = new Label();
@@ -92,7 +92,7 @@
             btnSee.Location = new Point(662, 148);
             btnSee.Name = "btnSee";
             btnSee.Size = new Size(24, 20);
-            btnSee.TabIndex = 8;
+            btnSee.TabIndex = 3;
             btnSee.UseVisualStyleBackColor = true;
             btnSee.Click += btnSee_Click;
             // 
@@ -120,27 +120,30 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_Salir);
+            panel1.Controls.Add(btnSalir);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(250, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(530, 19);
-            panel1.TabIndex = 2;
+            panel1.Size = new Size(530, 29);
+            panel1.TabIndex = 22;
             panel1.MouseMove += panel1_MouseMove;
             // 
-            // btn_Salir
+            // btnSalir
             // 
-            btn_Salir.FlatAppearance.BorderSize = 0;
-            btn_Salir.FlatAppearance.MouseDownBackColor = Color.Red;
-            btn_Salir.FlatAppearance.MouseOverBackColor = Color.Red;
-            btn_Salir.FlatStyle = FlatStyle.Flat;
-            btn_Salir.Image = Properties.Resources.x_;
-            btn_Salir.Location = new Point(507, -1);
-            btn_Salir.Name = "btn_Salir";
-            btn_Salir.Size = new Size(23, 20);
-            btn_Salir.TabIndex = 7;
-            btn_Salir.UseVisualStyleBackColor = true;
-            btn_Salir.Click += btn_Salir_Click;
+            btnSalir.Dock = DockStyle.Right;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnSalir.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(506, 0);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(24, 29);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // linkLabel1
             // 
@@ -167,7 +170,7 @@
             btn_Login.Location = new Point(368, 242);
             btn_Login.Name = "btn_Login";
             btn_Login.Size = new Size(288, 35);
-            btn_Login.TabIndex = 3;
+            btn_Login.TabIndex = 4;
             btn_Login.Text = "ACCEDER";
             btn_Login.UseVisualStyleBackColor = false;
             btn_Login.Click += btn_Login_Click;
@@ -180,7 +183,7 @@
             lb_Iniciar.Location = new Point(417, 32);
             lb_Iniciar.Name = "lb_Iniciar";
             lb_Iniciar.Size = new Size(206, 33);
-            lb_Iniciar.TabIndex = 5;
+            lb_Iniciar.TabIndex = 20;
             lb_Iniciar.Text = "INICIAR SESIÓN";
             // 
             // txt_Pass
@@ -295,7 +298,6 @@
         private Label lb_Pass;
         private Button btn_Login;
         private Label lb_Iniciar;
-        private Button btn_Salir;
         private PictureBox img_Logo_Blanco;
         private LinkLabel linkLabel1;
         private Label lb_Name_Clinica;
@@ -304,5 +306,6 @@
         private PictureBox picUser;
         private Button btnSee;
         private PictureBox picPass;
+        private Button btnSalir;
     }
 }

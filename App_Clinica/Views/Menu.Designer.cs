@@ -32,7 +32,7 @@
             pnlMenu = new Panel();
             button5 = new Button();
             button4 = new Button();
-            button3 = new Button();
+            btnAggPac = new Button();
             btnAggMed = new Button();
             btnMenu = new Button();
             pnlHerramienta = new Panel();
@@ -56,9 +56,8 @@
             pnlFondo.Controls.Add(panel1);
             pnlFondo.Dock = DockStyle.Fill;
             pnlFondo.Location = new Point(0, 0);
-            pnlFondo.Margin = new Padding(3, 4, 3, 4);
             pnlFondo.Name = "pnlFondo";
-            pnlFondo.Size = new Size(914, 600);
+            pnlFondo.Size = new Size(800, 450);
             pnlFondo.TabIndex = 0;
             // 
             // pnlMenu
@@ -66,14 +65,13 @@
             pnlMenu.BackColor = Color.FromArgb(0, 122, 204);
             pnlMenu.Controls.Add(button5);
             pnlMenu.Controls.Add(button4);
-            pnlMenu.Controls.Add(button3);
+            pnlMenu.Controls.Add(btnAggPac);
             pnlMenu.Controls.Add(btnAggMed);
             pnlMenu.Controls.Add(btnMenu);
             pnlMenu.Dock = DockStyle.Left;
-            pnlMenu.Location = new Point(0, 32);
-            pnlMenu.Margin = new Padding(3, 4, 3, 4);
+            pnlMenu.Location = new Point(0, 24);
             pnlMenu.Name = "pnlMenu";
-            pnlMenu.Size = new Size(234, 568);
+            pnlMenu.Size = new Size(205, 426);
             pnlMenu.TabIndex = 1;
             // 
             // button5
@@ -85,9 +83,10 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 224);
+            button5.Location = new Point(0, 168);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(234, 56);
+            button5.Size = new Size(205, 42);
             button5.TabIndex = 4;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
@@ -101,28 +100,31 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 168);
+            button4.Location = new Point(0, 126);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(234, 56);
+            button4.Size = new Size(205, 42);
             button4.TabIndex = 3;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAggPac
             // 
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaption;
-            button3.FlatAppearance.MouseOverBackColor = SystemColors.ActiveCaption;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(0, 112);
-            button3.Name = "button3";
-            button3.Size = new Size(234, 56);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnAggPac.Dock = DockStyle.Top;
+            btnAggPac.FlatAppearance.BorderSize = 0;
+            btnAggPac.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaption;
+            btnAggPac.FlatAppearance.MouseOverBackColor = SystemColors.ActiveCaption;
+            btnAggPac.FlatStyle = FlatStyle.Flat;
+            btnAggPac.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAggPac.ForeColor = Color.White;
+            btnAggPac.Location = new Point(0, 84);
+            btnAggPac.Margin = new Padding(3, 2, 3, 2);
+            btnAggPac.Name = "btnAggPac";
+            btnAggPac.Size = new Size(205, 42);
+            btnAggPac.TabIndex = 2;
+            btnAggPac.Text = "Agregar Paciente";
+            btnAggPac.UseVisualStyleBackColor = true;
+            btnAggPac.Click += btnAggPac_Click;
             // 
             // btnAggMed
             // 
@@ -133,12 +135,14 @@
             btnAggMed.FlatStyle = FlatStyle.Flat;
             btnAggMed.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAggMed.ForeColor = Color.White;
-            btnAggMed.Location = new Point(0, 56);
+            btnAggMed.Location = new Point(0, 42);
+            btnAggMed.Margin = new Padding(3, 2, 3, 2);
             btnAggMed.Name = "btnAggMed";
-            btnAggMed.Size = new Size(234, 56);
+            btnAggMed.Size = new Size(205, 42);
             btnAggMed.TabIndex = 1;
             btnAggMed.Text = "Agregar Médico";
             btnAggMed.UseVisualStyleBackColor = true;
+            btnAggMed.Click += btnAggMed_Click;
             // 
             // btnMenu
             // 
@@ -150,8 +154,9 @@
             btnMenu.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnMenu.ForeColor = Color.White;
             btnMenu.Location = new Point(0, 0);
+            btnMenu.Margin = new Padding(3, 2, 3, 2);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(234, 56);
+            btnMenu.Size = new Size(205, 42);
             btnMenu.TabIndex = 0;
             btnMenu.Text = "Menú";
             btnMenu.UseVisualStyleBackColor = true;
@@ -162,9 +167,8 @@
             pnlHerramienta.Controls.Add(btnSalir);
             pnlHerramienta.Dock = DockStyle.Top;
             pnlHerramienta.Location = new Point(0, 0);
-            pnlHerramienta.Margin = new Padding(3, 4, 3, 4);
             pnlHerramienta.Name = "pnlHerramienta";
-            pnlHerramienta.Size = new Size(914, 32);
+            pnlHerramienta.Size = new Size(800, 24);
             pnlHerramienta.TabIndex = 0;
             // 
             // btnSalir
@@ -175,10 +179,9 @@
             btnSalir.FlatAppearance.MouseOverBackColor = Color.Red;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(882, 0);
-            btnSalir.Margin = new Padding(3, 4, 3, 4);
+            btnSalir.Location = new Point(772, 0);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(32, 32);
+            btnSalir.Size = new Size(28, 24);
             btnSalir.TabIndex = 0;
             btnSalir.Text = "X";
             btnSalir.UseVisualStyleBackColor = true;
@@ -189,10 +192,9 @@
             panel1.Controls.Add(lb1);
             panel1.Controls.Add(lbWelcome);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(371, 132);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(325, 99);
             panel1.Name = "panel1";
-            panel1.Size = new Size(456, 355);
+            panel1.Size = new Size(399, 266);
             panel1.TabIndex = 0;
             // 
             // lb1
@@ -200,9 +202,9 @@
             lb1.AutoSize = true;
             lb1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb1.ForeColor = Color.FromArgb(0, 122, 204);
-            lb1.Location = new Point(111, 300);
+            lb1.Location = new Point(97, 225);
             lb1.Name = "lb1";
-            lb1.Size = new Size(275, 28);
+            lb1.Size = new Size(220, 21);
             lb1.TabIndex = 2;
             lb1.Text = "Estamos aquí para cuidarte.";
             // 
@@ -211,30 +213,28 @@
             lbWelcome.AutoSize = true;
             lbWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbWelcome.ForeColor = Color.FromArgb(0, 122, 204);
-            lbWelcome.Location = new Point(87, 44);
+            lbWelcome.Location = new Point(76, 33);
             lbWelcome.Name = "lbWelcome";
-            lbWelcome.Size = new Size(318, 28);
+            lbWelcome.Size = new Size(255, 21);
             lbWelcome.TabIndex = 1;
             lbWelcome.Text = "Bienvenido a tu centro de salud.";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Logo_Azul1__1_;
-            pictureBox1.Location = new Point(137, 100);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(120, 75);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(201, 196);
+            pictureBox1.Size = new Size(176, 147);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // Menu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(pnlFondo);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
@@ -260,7 +260,7 @@
         private Panel panel1;
         private Button button5;
         private Button button4;
-        private Button button3;
+        private Button btnAggPac;
         private Button btnAggMed;
     }
 }

@@ -130,6 +130,12 @@
   <data name="Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Health_Checkup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Health_Checkup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Azul1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Azul1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,13 +157,22 @@
   <data name="Eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Paciente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paciente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Box Important" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Box Important.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Task" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_Blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Health Checkup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Health Checkup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

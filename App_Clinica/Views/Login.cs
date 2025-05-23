@@ -130,5 +130,10 @@ namespace App_Clinica
                 btnSee.Image = Image.FromFile("Resources\\Eye.png");
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
