@@ -157,6 +157,7 @@
             btnGuardar.BackColor = Color.Gray;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatAppearance.MouseDownBackColor = Color.LightSkyBlue;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.LightSkyBlue;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
@@ -175,6 +176,7 @@
             btnNuevo.BackColor = Color.Gray;
             btnNuevo.FlatAppearance.BorderSize = 0;
             btnNuevo.FlatAppearance.MouseDownBackColor = Color.LightSkyBlue;
+            btnNuevo.FlatAppearance.MouseOverBackColor = Color.LightSkyBlue;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             btnNuevo.ForeColor = Color.White;

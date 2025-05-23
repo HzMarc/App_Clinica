@@ -55,7 +55,7 @@ namespace App_Clinica.Views
                         transaction
                      );
                     AutenticacionService.EnviarCorreo(txtCorreo.Text, nombreUsuario, contrasena);
-
+                    AutenticacionService.InsertarUsuario(conn, transaction, idUsuario, nombreUsuario, contrasena, rol);
                     transaction.Commit();
                     MessageBox.Show("Paciente y usuario creados correctamente.");
                 }
