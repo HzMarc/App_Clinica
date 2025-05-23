@@ -109,7 +109,7 @@ namespace App_Clinica.Views
                     // Validación de teléfono
                     if (nombre.Contains("telefono"))
                     {
-                        if (!Regex.IsMatch(txt.Text, @"^\d{8,15}$")) 
+                        if (!Regex.IsMatch(txt.Text, @"^\d{8,15}$"))
                         {
                             txt.BackColor = Color.MistyRose;
                             MessageBox.Show("Número de teléfono inválido. Solo se permiten números (8 a 15 dígitos).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -212,6 +212,11 @@ namespace App_Clinica.Views
             txtEnfermedades.BackColor = Color.White;
 
             txtNombres.Focus();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
