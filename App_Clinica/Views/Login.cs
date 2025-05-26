@@ -97,10 +97,12 @@ namespace App_Clinica
                 return;
             }
             string rol = AutenticacionService.IniciarSesion(txt_Usuario.Text, txt_Pass.Text);
+            string usuarioIngresado = txt_Usuario.Text;
 
             if (rol != null)
             {
                 Menu menu = new Menu();
+                menu.SetNombreUsuario(usuarioIngresado);
                 menu.Show();
                 this.Hide();
             }

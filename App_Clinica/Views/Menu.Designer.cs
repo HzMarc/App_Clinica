@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlFondo = new Panel();
+            lblSaludo = new Label();
+            btnUsuario = new Button();
             pnlMenu = new Panel();
             button5 = new Button();
             button4 = new Button();
@@ -41,6 +44,8 @@
             lb1 = new Label();
             lbWelcome = new Label();
             pictureBox1 = new PictureBox();
+            timerMostrarSaludo = new System.Windows.Forms.Timer(components);
+            timerOcultarSaludo = new System.Windows.Forms.Timer(components);
             pnlFondo.SuspendLayout();
             pnlMenu.SuspendLayout();
             pnlHerramienta.SuspendLayout();
@@ -51,6 +56,8 @@
             // pnlFondo
             // 
             pnlFondo.BackColor = SystemColors.ButtonFace;
+            pnlFondo.Controls.Add(lblSaludo);
+            pnlFondo.Controls.Add(btnUsuario);
             pnlFondo.Controls.Add(pnlMenu);
             pnlFondo.Controls.Add(pnlHerramienta);
             pnlFondo.Controls.Add(panel1);
@@ -59,6 +66,29 @@
             pnlFondo.Name = "pnlFondo";
             pnlFondo.Size = new Size(800, 450);
             pnlFondo.TabIndex = 0;
+            // 
+            // lblSaludo
+            // 
+            lblSaludo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSaludo.ForeColor = Color.DimGray;
+            lblSaludo.Location = new Point(526, 35);
+            lblSaludo.Name = "lblSaludo";
+            lblSaludo.Size = new Size(227, 21);
+            lblSaludo.TabIndex = 3;
+            lblSaludo.Text = "label1";
+            lblSaludo.TextAlign = ContentAlignment.MiddleRight;
+            lblSaludo.Visible = false;
+            // 
+            // btnUsuario
+            // 
+            btnUsuario.FlatAppearance.BorderSize = 0;
+            btnUsuario.FlatStyle = FlatStyle.Flat;
+            btnUsuario.Image = Properties.Resources.Male_User;
+            btnUsuario.Location = new Point(752, 24);
+            btnUsuario.Name = "btnUsuario";
+            btnUsuario.Size = new Size(48, 47);
+            btnUsuario.TabIndex = 2;
+            btnUsuario.UseVisualStyleBackColor = true;
             // 
             // pnlMenu
             // 
@@ -189,6 +219,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.Controls.Add(lb1);
             panel1.Controls.Add(lbWelcome);
             panel1.Controls.Add(pictureBox1);
@@ -228,6 +259,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // timerMostrarSaludo
+            // 
+            timerMostrarSaludo.Interval = 500;
+            timerMostrarSaludo.Tick += timerMostrarSaludo_Tick;
+            // 
+            // timerOcultarSaludo
+            // 
+            timerOcultarSaludo.Interval = 1000;
+            timerOcultarSaludo.Tick += timerOcultarSaludo_Tick;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -262,5 +303,9 @@
         private Button button4;
         private Button btnAggPac;
         private Button btnAggMed;
+        private Label lblSaludo;
+        private Button btnUsuario;
+        private System.Windows.Forms.Timer timerMostrarSaludo;
+        private System.Windows.Forms.Timer timerOcultarSaludo;
     }
 }

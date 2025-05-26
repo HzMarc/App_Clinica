@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace App_Clinica.Views
 {
     public partial class Menu : Form
     {
+        private string nombreUsuarioActual = "";
         public Menu()
         {
             InitializeComponent();
@@ -44,6 +46,35 @@ namespace App_Clinica.Views
             Agregar_Medico agregar_Medico = new Agregar_Medico();
             agregar_Medico.Show();
             this.Hide();
+        }
+        public void SetNombreUsuario(string nombreUsuario)
+        {
+            nombreUsuarioActual = nombreUsuario;
+            timerMostrarSaludo.Start();
+        }
+
+        private void timerMostrarSaludo_Tick(object sender, EventArgs e)
+        {
+            timerMostrarSaludo.Stop();
+            lblSaludo.Text = "Bienvenido, " + nombreUsuarioActual;
+            lblSaludo.Visible = true;
+            timerOcultarSaludo.Start();
+        }
+
+        private void timerOcultarSaludo_Tick(object sender, EventArgs e)
+        {
+            timerOcultarSaludo.Stop();
+            lblSaludo.Visible = false;
+            Task.Delay(500).ContinueWith(_ =>
+            {
+                Invoke((MethodInvoker)(() =>
+                {
+                    lblSaludo.Text = nombreUsuarioActual;
+                    lblSaludo.Visible = true;
+
+                }));
+
+            });
         }
     }
 }
