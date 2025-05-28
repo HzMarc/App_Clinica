@@ -16,5 +16,10 @@ namespace App_Clinica.Views
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
