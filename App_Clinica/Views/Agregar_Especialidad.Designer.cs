@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar_Especialidad));
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
@@ -35,7 +36,6 @@
             button1 = new Button();
             button2 = new Button();
             panel1 = new Panel();
-            button4 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,24 +43,26 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Location = new Point(75, 64);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(42, 99);
             label1.Name = "label1";
-            label1.Size = new Size(64, 20);
+            label1.Size = new Size(89, 28);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(75, 169);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(42, 198);
             label2.Name = "label2";
-            label2.Size = new Size(87, 20);
+            label2.Size = new Size(123, 28);
             label2.TabIndex = 1;
             label2.Text = "Descripción";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(198, 64);
+            textBox1.Location = new Point(188, 93);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(373, 34);
@@ -68,7 +70,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(198, 169);
+            textBox2.Location = new Point(188, 198);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(373, 130);
@@ -76,28 +78,35 @@
             // 
             // button1
             // 
-            button1.Location = new Point(63, 341);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(0, 122, 204);
+            button1.Location = new Point(290, 349);
             button1.Name = "button1";
-            button1.Size = new Size(150, 56);
+            button1.Size = new Size(84, 80);
             button1.TabIndex = 4;
-            button1.Text = "Nuevo";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(258, 341);
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.FromArgb(0, 122, 204);
+            button2.Location = new Point(560, 8);
             button2.Name = "button2";
-            button2.Size = new Size(150, 56);
+            button2.Size = new Size(91, 54);
             button2.TabIndex = 5;
-            button2.Text = "Guardar";
             button2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 122, 204);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(button4);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Fill;
@@ -106,29 +115,17 @@
             panel1.Size = new Size(652, 450);
             panel1.TabIndex = 7;
             // 
-            // button4
-            // 
-            button4.Location = new Point(452, 341);
-            button4.Name = "button4";
-            button4.Size = new Size(150, 56);
-            button4.TabIndex = 7;
-            button4.Text = "Salir";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // Agregar_Especialidad
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(652, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(panel1);
             Name = "Agregar_Especialidad";
             Text = "Agregar_Especialidad";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -140,6 +137,5 @@
         private Button button1;
         private Button button2;
         private Panel panel1;
-        private Button button4;
     }
 }
