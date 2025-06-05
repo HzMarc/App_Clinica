@@ -295,5 +295,119 @@ namespace App_Clinica.DataAccess
 
             return nombreUsuario;
         }
+        public string GenerarIdMedico()
+        {
+            string nuevoID = "M001";
+            using (SqlConnection conn = new Conexion().AbrirConexion())
+            {
+                string query = "SELECT TOP 1 ID_Medico FROM Medico ORDER BY ID_Medico DESC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    string ultimoID = resultado.ToString();
+                    int numero = int.Parse(ultimoID.Substring(1)) + 1;
+                    nuevoID = "M" + numero.ToString("D3");
+                }
+            }
+            return nuevoID;
+        }
+        public static void InsertarMedico(SqlConnection conn, SqlTransaction transaction,
+        string idMedico, string nombres, string apellidos, string correo,
+        string telefono, string idEspecialidad, string idUsuario)
+        {
+            string sql = @"INSERT INTO Medico
+                (ID_Medico, Nombres, Apellidos, Correo, Telefono, ID_Especialidad, ID_Usuario, Estado)
+                VALUES (@ID_Medico, @Nombres, @Apellidos, @Correo, @Telefono, @ID_Especialidad, @ID_Usuario, '1')";
+
+            SqlCommand cmd = new SqlCommand(sql, conn, transaction);
+            cmd.Parameters.AddWithValue("@ID_Medico", idMedico);
+            cmd.Parameters.AddWithValue("@Nombres", nombres);
+            cmd.Parameters.AddWithValue("@Apellidos", apellidos);
+            cmd.Parameters.AddWithValue("@Correo", correo);
+            cmd.Parameters.AddWithValue("@Telefono", telefono);
+            cmd.Parameters.AddWithValue("@ID_Especialidad", idEspecialidad);
+            cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
+
+            cmd.ExecuteNonQuery();
+        }
+        public static bool ValidarCampos(Control control)
+        {
+            bool camposValidos = true;
+
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.BackColor = Color.MistyRose;
+                    camposValidos = false;
+                }
+                else if (c is ComboBox comboBox && comboBox.SelectedIndex == -1)
+                {
+                    comboBox.BackColor = Color.MistyRose;
+                    camposValidos = false;
+                }
+                else
+                {
+                    c.BackColor = SystemColors.Window;
+                }
+            }
+
+            return camposValidos;
+        }
+        public static DataTable ObtenerEspecialidades()
+        {
+            using (SqlConnection conn = new Conexion().AbrirConexion())
+            {
+                string sql = "SELECT ID_Especialidad, Nombre FROM Especialidad WHERE Estado = '1'";
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+        public static void InsertarEspecialidad(SqlConnection conn, SqlTransaction transaction, string id, string nombre, string descripcion)
+        {
+            string sql = @"INSERT INTO Especialidad 
+             (ID_Especialidad, Nombre, Descripcion, Estado)
+             VALUES (@ID_Especialidad, @Nombre, @Descripcion, @Estado)";
+
+            SqlCommand cmd = new SqlCommand(sql, conn, transaction);
+            cmd.Parameters.AddWithValue("@ID_Especialidad", id);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Descripcion", descripcion);
+            cmd.Parameters.AddWithValue("@Estado", "1");
+            cmd.ExecuteNonQuery();
+        }
+        public string GenerarIdEspecialidad()
+        {
+            string nuevoID = "E001";
+
+            try
+            {
+                using (SqlConnection conn = new Conexion().AbrirConexion())
+                {
+                    using (SqlCommand cmd = new SqlCommand("GenerarIdEspecialidad", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                nuevoID = reader["NuevoID"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar ID de especialidad: " + ex.Message);
+            }
+
+            return nuevoID;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using App_Clinica.DataAccess;
+using App_Clinica.Services;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,14 @@ namespace App_Clinica.Views
 {
     public partial class Agregar_Paciente : Form
     {
+        private PlaceholderManager placeholderManager;
+        private readonly Color placeholderColor = Color.FromArgb(160, 160, 160); 
+        private readonly Color textColor = Color.FromArgb(50, 50, 50);
         public Agregar_Paciente()
         {
             InitializeComponent();
+            placeholderManager = new PlaceholderManager(placeholderColor, textColor);
+            ConfigurarPlaceholders();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -170,12 +176,6 @@ namespace App_Clinica.Views
             return todosLlenos;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtNombres.Clear();
@@ -217,6 +217,22 @@ namespace App_Clinica.Views
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ConfigurarPlaceholders()
+        {
+            
+            placeholderManager.AgregarPlaceholder(txtNombres, "Ingrese nombres");
+            placeholderManager.AgregarPlaceholder(txtApellidos, "Ingrese apellidos");
+            placeholderManager.AgregarPlaceholder(txtCorreo, "ejemplo@dominio.com");
+            placeholderManager.AgregarPlaceholder(txtTelefono, "Número de teléfono (ej. 7XXXXXXX)");
+            placeholderManager.AgregarPlaceholder(txtAlergias, "Describa alergias (si aplica)");
+            placeholderManager.AgregarPlaceholder(txtEnfermedades, "Describa enfermedades crónicas (si aplica)");
+           
+            placeholderManager.AgregarPlaceholder(txtPeso, "Peso en kg");
+            placeholderManager.AgregarPlaceholder(txtAltura, "Altura en cm");
+
+            placeholderManager.AgregarPlaceholder(cmbGenero, "Seleccione género");
+            placeholderManager.AgregarPlaceholder(cmbTipoSangre, "Seleccione tipo de sangre");
         }
     }
 }
