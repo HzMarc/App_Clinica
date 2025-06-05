@@ -88,9 +88,9 @@
             btnVertabla.ImageAlign = ContentAlignment.MiddleLeft;
             btnVertabla.Location = new Point(289, 328);
             btnVertabla.Name = "btnVertabla";
-            btnVertabla.Size = new Size(213, 26);
+            btnVertabla.Size = new Size(213, 33);
             btnVertabla.TabIndex = 21;
-            btnVertabla.Text = "Ver tabla";
+            btnVertabla.Text = "    Ver tabla";
             btnVertabla.UseVisualStyleBackColor = false;
             // 
             // btnNew
@@ -108,6 +108,7 @@
             btnNew.TabIndex = 20;
             btnNew.Text = "    Nuevo";
             btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // btnGuardar
             // 

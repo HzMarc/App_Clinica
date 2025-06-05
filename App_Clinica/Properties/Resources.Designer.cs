@@ -233,9 +233,29 @@ namespace App_Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rescheduling_A_Task {
+            get {
+                object obj = ResourceManager.GetObject("Rescheduling A Task", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save {
             get {
                 object obj = ResourceManager.GetObject("Save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Schedule {
+            get {
+                object obj = ResourceManager.GetObject("Schedule", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +276,16 @@ namespace App_Clinica.Properties {
         internal static System.Drawing.Bitmap Task {
             get {
                 object obj = ResourceManager.GetObject("Task", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Time {
+            get {
+                object obj = ResourceManager.GetObject("Time", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

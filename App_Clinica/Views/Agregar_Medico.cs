@@ -7,6 +7,7 @@ namespace App_Clinica.Views
 {
     public partial class Agregar_Medico : Form
     {
+        private string idMedico = "";
         private PlaceholderManager placeholderManager;
         private readonly Color placeholderColor = Color.FromArgb(160, 160, 160);
         private readonly Color textColor = Color.FromArgb(50, 50, 50);
@@ -16,6 +17,7 @@ namespace App_Clinica.Views
             placeholderManager = new PlaceholderManager(placeholderColor, textColor);
             ConfigurarPlaceholders();
             CargarEspecialidades();
+            idMedico = new AutenticacionService().GenerarIdMedico();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -44,7 +46,6 @@ namespace App_Clinica.Views
             }
 
             AutenticacionService service = new AutenticacionService();
-            string idMedico = service.GenerarIdMedico();
             string idUsuario = service.GenerarNuevoID();
             string contrasena = AutenticacionService.GenerarContrasena();
             string rol = "Médico";
@@ -61,6 +62,9 @@ namespace App_Clinica.Views
                         conn,
                         transaction
                     );
+
+                    // Generar ID del médico solo una vez
+                    idMedico = service.GenerarIdMedico();
 
                     AutenticacionService.InsertarUsuario(conn, transaction, idUsuario, nombreUsuario, contrasena, rol);
 
@@ -79,7 +83,11 @@ namespace App_Clinica.Views
                     AutenticacionService.EnviarCorreo(txtCorreo.Text, nombreUsuario, contrasena);
 
                     transaction.Commit();
-                    MessageBox.Show("Médico registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Médico registrado correctamente. Ahora agregue el horario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Mostrar formulario para agregar horario
+                    Agregar_Horario horarioForm = new Agregar_Horario(idMedico);
+                    horarioForm.ShowDialog();
                 }
                 catch (Exception ex)
                 {
@@ -117,9 +125,19 @@ namespace App_Clinica.Views
             DataTable especialidades = AutenticacionService.ObtenerEspecialidades();
 
             cmbEspecialidad.DataSource = especialidades;
-            cmbEspecialidad.DisplayMember = "Nombre";      
-            cmbEspecialidad.ValueMember = "ID_Especialidad"; 
-            cmbEspecialidad.SelectedIndex = -1; 
+            cmbEspecialidad.DisplayMember = "Nombre";
+            cmbEspecialidad.ValueMember = "ID_Especialidad";
+            cmbEspecialidad.SelectedIndex = -1;
+        }
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            txtNombres.Clear();
+            txtApellidos.Clear();
+            txtCorreo.Clear();
+            txtTelefono.Clear();
+            cmbEspecialidad.SelectedIndex = -1;
+
+            txtNombres.Focus();
         }
     }
 }
