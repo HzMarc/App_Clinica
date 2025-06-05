@@ -33,7 +33,10 @@
             txtNombreEspecialidad = new TextBox();
             txtDescripcionEspecialidad = new TextBox();
             panel1 = new Panel();
-            btnVertabla = new Button();
+            panel3 = new Panel();
+            btnEditar = new Button();
+            btnEstado = new Button();
+            dgvEspecialidad = new DataGridView();
             btnNew = new Button();
             btnGuardar = new Button();
             panel2 = new Panel();
@@ -42,6 +45,8 @@
             pnltool = new Panel();
             btnSalir = new Button();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEspecialidad).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnltool.SuspendLayout();
@@ -97,7 +102,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnVertabla);
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(panel2);
@@ -110,24 +115,56 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(330, 449);
+            panel1.Size = new Size(964, 495);
             panel1.TabIndex = 7;
             // 
-            // btnVertabla
+            // panel3
             // 
-            btnVertabla.BackColor = Color.Gray;
-            btnVertabla.FlatAppearance.BorderSize = 0;
-            btnVertabla.FlatStyle = FlatStyle.Flat;
-            btnVertabla.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnVertabla.ForeColor = Color.White;
-            btnVertabla.Image = Properties.Resources.Insert_Table;
-            btnVertabla.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVertabla.Location = new Point(24, 399);
-            btnVertabla.Name = "btnVertabla";
-            btnVertabla.Size = new Size(277, 33);
-            btnVertabla.TabIndex = 5;
-            btnVertabla.Text = "Ver tabla";
-            btnVertabla.UseVisualStyleBackColor = false;
+            panel3.BackColor = Color.FromArgb(233, 233, 233);
+            panel3.Controls.Add(btnEditar);
+            panel3.Controls.Add(btnEstado);
+            panel3.Controls.Add(dgvEspecialidad);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(408, 135);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(556, 360);
+            panel3.TabIndex = 79;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.DimGray;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(182, 315);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(90, 33);
+            btnEditar.TabIndex = 15;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEstado
+            // 
+            btnEstado.BackColor = Color.DimGray;
+            btnEstado.FlatStyle = FlatStyle.Flat;
+            btnEstado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnEstado.ForeColor = Color.White;
+            btnEstado.Location = new Point(19, 315);
+            btnEstado.Name = "btnEstado";
+            btnEstado.Size = new Size(142, 33);
+            btnEstado.TabIndex = 14;
+            btnEstado.Text = "Modificar estado";
+            btnEstado.UseVisualStyleBackColor = false;
+            btnEstado.Click += btnEstado_Click;
+            // 
+            // dgvEspecialidad
+            // 
+            dgvEspecialidad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEspecialidad.Location = new Point(19, 39);
+            dgvEspecialidad.Name = "dgvEspecialidad";
+            dgvEspecialidad.Size = new Size(525, 270);
+            dgvEspecialidad.TabIndex = 13;
             // 
             // btnNew
             // 
@@ -144,6 +181,7 @@
             btnNew.TabIndex = 4;
             btnNew.Text = "    Nuevo";
             btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // btnGuardar
             // 
@@ -170,13 +208,13 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 29);
             panel2.Name = "panel2";
-            panel2.Size = new Size(330, 106);
+            panel2.Size = new Size(964, 106);
             panel2.TabIndex = 11;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Doctors_Bag;
-            pictureBox1.Location = new Point(137, -1);
+            pictureBox1.Location = new Point(472, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(80, 71);
             pictureBox1.TabIndex = 5;
@@ -188,7 +226,7 @@
             label3.BackColor = Color.FromArgb(227, 242, 253);
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(25, 118, 210);
-            label3.Location = new Point(92, 73);
+            label3.Location = new Point(427, 82);
             label3.Name = "label3";
             label3.Size = new Size(171, 21);
             label3.TabIndex = 0;
@@ -201,7 +239,7 @@
             pnltool.Dock = DockStyle.Top;
             pnltool.Location = new Point(0, 0);
             pnltool.Name = "pnltool";
-            pnltool.Size = new Size(330, 29);
+            pnltool.Size = new Size(964, 29);
             pnltool.TabIndex = 10;
             // 
             // btnSalir
@@ -213,7 +251,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.Gray;
-            btnSalir.Location = new Point(299, 0);
+            btnSalir.Location = new Point(933, 0);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(31, 29);
             btnSalir.TabIndex = 6;
@@ -225,7 +263,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(330, 449);
+            ClientSize = new Size(964, 495);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
@@ -234,6 +272,8 @@
             Text = "Agregar_Especialidad";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvEspecialidad).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -253,8 +293,11 @@
         private Button btnSalir;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Button btnVertabla;
         private Button btnNew;
         private Button btnGuardar;
+        private Panel panel3;
+        private Button btnEditar;
+        private Button btnEstado;
+        private DataGridView dgvEspecialidad;
     }
 }
