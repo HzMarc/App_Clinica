@@ -34,7 +34,7 @@
             btnUsuario = new Button();
             pnlMenu = new Panel();
             button5 = new Button();
-            button4 = new Button();
+            btnAggEspecialidad = new Button();
             btnAggPac = new Button();
             btnAggMed = new Button();
             btnMenu = new Button();
@@ -94,7 +94,7 @@
             // 
             pnlMenu.BackColor = Color.FromArgb(0, 122, 204);
             pnlMenu.Controls.Add(button5);
-            pnlMenu.Controls.Add(button4);
+            pnlMenu.Controls.Add(btnAggEspecialidad);
             pnlMenu.Controls.Add(btnAggPac);
             pnlMenu.Controls.Add(btnAggMed);
             pnlMenu.Controls.Add(btnMenu);
@@ -121,22 +121,23 @@
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAggEspecialidad
             // 
-            button4.Dock = DockStyle.Top;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaption;
-            button4.FlatAppearance.MouseOverBackColor = SystemColors.ActiveCaption;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 126);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(205, 42);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnAggEspecialidad.Dock = DockStyle.Top;
+            btnAggEspecialidad.FlatAppearance.BorderSize = 0;
+            btnAggEspecialidad.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaption;
+            btnAggEspecialidad.FlatAppearance.MouseOverBackColor = SystemColors.ActiveCaption;
+            btnAggEspecialidad.FlatStyle = FlatStyle.Flat;
+            btnAggEspecialidad.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAggEspecialidad.ForeColor = Color.White;
+            btnAggEspecialidad.Location = new Point(0, 126);
+            btnAggEspecialidad.Margin = new Padding(3, 2, 3, 2);
+            btnAggEspecialidad.Name = "btnAggEspecialidad";
+            btnAggEspecialidad.Size = new Size(205, 42);
+            btnAggEspecialidad.TabIndex = 3;
+            btnAggEspecialidad.Text = "Agregar Especialidad";
+            btnAggEspecialidad.UseVisualStyleBackColor = true;
+            btnAggEspecialidad.Click += btnAggEspecialidad_Click;
             // 
             // btnAggPac
             // 
@@ -300,7 +301,7 @@
         private Button btnMenu;
         private Panel panel1;
         private Button button5;
-        private Button button4;
+        private Button btnAggEspecialidad;
         private Button btnAggPac;
         private Button btnAggMed;
         private Label lblSaludo;

@@ -76,5 +76,12 @@ namespace App_Clinica.Views
 
             });
         }
+
+        private void btnAggEspecialidad_Click(object sender, EventArgs e)
+        {
+            Agregar_Especialidad agregar_Especialidad = new Agregar_Especialidad();
+            agregar_Especialidad.Show();
+            this.Hide();
+        }
     }
 }
