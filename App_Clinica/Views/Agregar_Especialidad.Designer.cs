@@ -58,9 +58,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(25, 118, 210);
-            label1.Location = new Point(24, 160);
+            label1.Location = new Point(27, 213);
             label1.Name = "label1";
-            label1.Size = new Size(73, 21);
+            label1.Size = new Size(89, 28);
             label1.TabIndex = 77;
             label1.Text = "Nombre";
             // 
@@ -69,9 +69,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(25, 118, 210);
-            label2.Location = new Point(24, 225);
+            label2.Location = new Point(27, 300);
             label2.Name = "label2";
-            label2.Size = new Size(100, 21);
+            label2.Size = new Size(123, 28);
             label2.TabIndex = 78;
             label2.Text = "Descripción";
             // 
@@ -80,11 +80,10 @@
             txtNombreEspecialidad.BackColor = Color.WhiteSmoke;
             txtNombreEspecialidad.BorderStyle = BorderStyle.FixedSingle;
             txtNombreEspecialidad.ForeColor = Color.DimGray;
-            txtNombreEspecialidad.Location = new Point(24, 183);
-            txtNombreEspecialidad.Margin = new Padding(3, 2, 3, 2);
+            txtNombreEspecialidad.Location = new Point(27, 244);
             txtNombreEspecialidad.Multiline = true;
             txtNombreEspecialidad.Name = "txtNombreEspecialidad";
-            txtNombreEspecialidad.Size = new Size(277, 26);
+            txtNombreEspecialidad.Size = new Size(316, 34);
             txtNombreEspecialidad.TabIndex = 1;
             // 
             // txtDescripcionEspecialidad
@@ -92,11 +91,10 @@
             txtDescripcionEspecialidad.BackColor = Color.WhiteSmoke;
             txtDescripcionEspecialidad.BorderStyle = BorderStyle.FixedSingle;
             txtDescripcionEspecialidad.ForeColor = Color.DimGray;
-            txtDescripcionEspecialidad.Location = new Point(24, 248);
-            txtDescripcionEspecialidad.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcionEspecialidad.Location = new Point(27, 331);
             txtDescripcionEspecialidad.Multiline = true;
             txtDescripcionEspecialidad.Name = "txtDescripcionEspecialidad";
-            txtDescripcionEspecialidad.Size = new Size(277, 98);
+            txtDescripcionEspecialidad.Size = new Size(316, 130);
             txtDescripcionEspecialidad.TabIndex = 2;
             // 
             // panel1
@@ -113,9 +111,8 @@
             panel1.Controls.Add(txtDescripcionEspecialidad);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(964, 495);
+            panel1.Size = new Size(1102, 660);
             panel1.TabIndex = 7;
             // 
             // panel3
@@ -125,9 +122,10 @@
             panel3.Controls.Add(btnEstado);
             panel3.Controls.Add(dgvEspecialidad);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(408, 135);
+            panel3.Location = new Point(467, 180);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(556, 360);
+            panel3.Size = new Size(635, 480);
             panel3.TabIndex = 79;
             // 
             // btnEditar
@@ -136,9 +134,10 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(182, 315);
+            btnEditar.Location = new Point(223, 420);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(90, 33);
+            btnEditar.Size = new Size(103, 44);
             btnEditar.TabIndex = 15;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -150,9 +149,10 @@
             btnEstado.FlatStyle = FlatStyle.Flat;
             btnEstado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnEstado.ForeColor = Color.White;
-            btnEstado.Location = new Point(19, 315);
+            btnEstado.Location = new Point(22, 420);
+            btnEstado.Margin = new Padding(3, 4, 3, 4);
             btnEstado.Name = "btnEstado";
-            btnEstado.Size = new Size(142, 33);
+            btnEstado.Size = new Size(162, 44);
             btnEstado.TabIndex = 14;
             btnEstado.Text = "Modificar estado";
             btnEstado.UseVisualStyleBackColor = false;
@@ -161,9 +161,11 @@
             // dgvEspecialidad
             // 
             dgvEspecialidad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEspecialidad.Location = new Point(19, 39);
+            dgvEspecialidad.Location = new Point(22, 52);
+            dgvEspecialidad.Margin = new Padding(3, 4, 3, 4);
             dgvEspecialidad.Name = "dgvEspecialidad";
-            dgvEspecialidad.Size = new Size(525, 270);
+            dgvEspecialidad.RowHeadersWidth = 51;
+            dgvEspecialidad.Size = new Size(600, 360);
             dgvEspecialidad.TabIndex = 13;
             // 
             // btnNew
@@ -175,9 +177,10 @@
             btnNew.ForeColor = Color.White;
             btnNew.Image = Properties.Resources.Task;
             btnNew.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNew.Location = new Point(24, 360);
+            btnNew.Location = new Point(27, 480);
+            btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
-            btnNew.Size = new Size(129, 33);
+            btnNew.Size = new Size(147, 44);
             btnNew.TabIndex = 4;
             btnNew.Text = "    Nuevo";
             btnNew.UseVisualStyleBackColor = false;
@@ -192,9 +195,10 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Image = Properties.Resources.Save;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(172, 360);
+            btnGuardar.Location = new Point(197, 480);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(129, 33);
+            btnGuardar.Size = new Size(147, 44);
             btnGuardar.TabIndex = 3;
             btnGuardar.Text = "     Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -206,17 +210,19 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 29);
+            panel2.Location = new Point(0, 39);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(964, 106);
+            panel2.Size = new Size(1102, 141);
             panel2.TabIndex = 11;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Doctors_Bag;
-            pictureBox1.Location = new Point(472, 8);
+            pictureBox1.Location = new Point(539, 11);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(80, 71);
+            pictureBox1.Size = new Size(91, 95);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -226,9 +232,9 @@
             label3.BackColor = Color.FromArgb(227, 242, 253);
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(25, 118, 210);
-            label3.Location = new Point(427, 82);
+            label3.Location = new Point(488, 109);
             label3.Name = "label3";
-            label3.Size = new Size(171, 21);
+            label3.Size = new Size(211, 28);
             label3.TabIndex = 0;
             label3.Text = "Agregar Especialidad";
             // 
@@ -238,8 +244,9 @@
             pnltool.Controls.Add(btnSalir);
             pnltool.Dock = DockStyle.Top;
             pnltool.Location = new Point(0, 0);
+            pnltool.Margin = new Padding(3, 4, 3, 4);
             pnltool.Name = "pnltool";
-            pnltool.Size = new Size(964, 29);
+            pnltool.Size = new Size(1102, 39);
             pnltool.TabIndex = 10;
             // 
             // btnSalir
@@ -251,9 +258,10 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.Gray;
-            btnSalir.Location = new Point(933, 0);
+            btnSalir.Location = new Point(1067, 0);
+            btnSalir.Margin = new Padding(3, 4, 3, 4);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(31, 29);
+            btnSalir.Size = new Size(35, 39);
             btnSalir.TabIndex = 6;
             btnSalir.Text = "X";
             btnSalir.UseVisualStyleBackColor = true;
@@ -261,12 +269,11 @@
             // 
             // Agregar_Especialidad
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 495);
+            ClientSize = new Size(1102, 660);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Agregar_Especialidad";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar_Especialidad";
