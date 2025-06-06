@@ -83,5 +83,15 @@ namespace App_Clinica.Views
             agregar_Especialidad.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
