@@ -24,7 +24,6 @@ namespace App_Clinica.Views
             placeholderManager = new PlaceholderManager(placeholderColor, textColor);
             ConfigurarPlaceholders();
             CargarEspecialidades();
-            idMedico = new AutenticacionService().GenerarIdMedico();
             InicializarDataTable();
             CargarMedicosDesdeBD();
         }
@@ -36,22 +35,15 @@ namespace App_Clinica.Views
             dgvMedico.AllowUserToAddRows = false;
             dgvMedico.ReadOnly = true;
             dgvMedico.AutoGenerateColumns = true;
-            if (dgvMedico.Columns["Id"] != null)
-                dgvMedico.Columns["Id"].HeaderText = "ID Médico";
-            if (dgvMedico.Columns["Nombres"] != null)
-                dgvMedico.Columns["Nombres"].HeaderText = "Nombres";
-            if (dgvMedico.Columns["Apellidos"] != null)
-                dgvMedico.Columns["Apellidos"].HeaderText = "Apellidos";
-            if (dgvMedico.Columns["Correo"] != null)
-                dgvMedico.Columns["Correo"].HeaderText = "Correo";
-            if (dgvMedico.Columns["Telefono"] != null)
-                dgvMedico.Columns["Telefono"].HeaderText = "Teléfono";
-            if (dgvMedico.Columns["ID_Especialidad"] != null)
-                dgvMedico.Columns["ID_Especialidad"].HeaderText = "ID Especialidad";
-            if (dgvMedico.Columns["ID_Usuario"] != null)
-                dgvMedico.Columns["ID_Usuario"].HeaderText = "ID Usuario";
-            if (dgvMedico.Columns["Estado"] != null)
-                dgvMedico.Columns["Estado"].HeaderText = "Estado (1=Activo, 0=Inactivo)";
+
+            if (dgvMedico.Columns["Id"] != null) dgvMedico.Columns["Id"].HeaderText = "ID Médico";
+            if (dgvMedico.Columns["Nombres"] != null) dgvMedico.Columns["Nombres"].HeaderText = "Nombres";
+            if (dgvMedico.Columns["Apellidos"] != null) dgvMedico.Columns["Apellidos"].HeaderText = "Apellidos";
+            if (dgvMedico.Columns["Correo"] != null) dgvMedico.Columns["Correo"].HeaderText = "Correo";
+            if (dgvMedico.Columns["Telefono"] != null) dgvMedico.Columns["Telefono"].HeaderText = "Teléfono";
+            if (dgvMedico.Columns["ID_Especialidad"] != null) dgvMedico.Columns["ID_Especialidad"].HeaderText = "ID Especialidad";
+            if (dgvMedico.Columns["ID_Usuario"] != null) dgvMedico.Columns["ID_Usuario"].HeaderText = "ID Usuario";
+            if (dgvMedico.Columns["Estado"] != null) dgvMedico.Columns["Estado"].HeaderText = "Estado (1=Activo, 0=Inactivo)";
         }
 
         private void InicializarDataTable()
@@ -72,28 +64,14 @@ namespace App_Clinica.Views
             dtMedico.Clear();
             using (SqlConnection conn = new Conexion().AbrirConexion())
             {
-                string sql = @"
-                    SELECT
-                        ID_Medico    AS Id,
-                        Nombres,
-                        Apellidos,
-                        Correo,
-                        Telefono,
-                        ID_Especialidad,
-                        ID_Usuario,
-                        Estado
-                    FROM Medico;
-                ";
+                string sql = @"SELECT ID_Medico AS Id, Nombres, Apellidos, Correo, Telefono, ID_Especialidad, ID_Usuario, Estado FROM Medico;";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
-                    try
-                    {
-                        da.Fill(dtMedico);
-                    }
+                    try { da.Fill(dtMedico); }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cargar médicos desde la base de datos:\n" + ex.Message, "Error BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al cargar médicos:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -111,14 +89,14 @@ namespace App_Clinica.Views
             txtNombres.Focus();
             enEdicion = false;
             idEnEdicion = null;
-            idMedico = new AutenticacionService().GenerarIdMedico();
+            idMedico = ""; // lo generamos en guardar
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarCampos(this))
             {
-                MessageBox.Show("Por favor, completa todos los campos antes de guardar.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Completa todos los campos antes de guardar.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -135,18 +113,28 @@ namespace App_Clinica.Views
                         string rol = "Médico";
                         string nombreUsuario = AutenticacionService.GenerarNombreUsuarioUnico(txtNombres.Text.Trim(), txtApellidos.Text.Trim(), conn, transaction);
                         idMedico = service.GenerarIdMedico();
+
+                        // Insertar usuario y médico
                         AutenticacionService.InsertarUsuario(conn, transaction, idUsuario, nombreUsuario, contrasena, rol);
                         AutenticacionService.InsertarMedico(conn, transaction, idMedico, txtNombres.Text.Trim(), txtApellidos.Text.Trim(), txtCorreo.Text.Trim(), txtTelefono.Text.Trim(), cmbEspecialidad.SelectedValue.ToString(), idUsuario);
-                        AutenticacionService.EnviarCorreo(txtCorreo.Text.Trim(), nombreUsuario, contrasena);
+
+                        // Confirmar transacción
                         transaction.Commit();
+
+                        // Enviar correo
+                        AutenticacionService.EnviarCorreo(txtCorreo.Text.Trim(), nombreUsuario, contrasena);
+
                         MessageBox.Show("Médico registrado correctamente. Ahora agregue el horario.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpiar campos
                         txtNombres.Clear();
                         txtApellidos.Clear();
                         txtCorreo.Clear();
                         txtTelefono.Clear();
                         cmbEspecialidad.SelectedIndex = -1;
-                        idMedico = service.GenerarIdMedico();
                         CargarMedicosDesdeBD();
+
+                        // Abrir formulario de horarios
                         Agregar_Horario horarioForm = new Agregar_Horario(idMedico);
                         horarioForm.ShowDialog();
                     }
@@ -154,14 +142,10 @@ namespace App_Clinica.Views
                     {
                         string sqlUpdate = @"
                             UPDATE Medico
-                            SET
-                                Nombres = @Nombres,
-                                Apellidos = @Apellidos,
-                                Correo = @Correo,
-                                Telefono = @Telefono,
+                            SET Nombres = @Nombres, Apellidos = @Apellidos,
+                                Correo = @Correo, Telefono = @Telefono,
                                 ID_Especialidad = @ID_Especialidad
-                            WHERE ID_Medico = @IdMedico;
-                        ";
+                            WHERE ID_Medico = @IdMedico;";
                         using (SqlCommand cmd = new SqlCommand(sqlUpdate, conn, transaction))
                         {
                             cmd.Parameters.AddWithValue("@Nombres", txtNombres.Text.Trim());
@@ -174,6 +158,9 @@ namespace App_Clinica.Views
                         }
                         transaction.Commit();
                         MessageBox.Show("Médico actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarMedicosDesdeBD();
+
+                        // Reset
                         txtNombres.Clear();
                         txtApellidos.Clear();
                         txtCorreo.Clear();
@@ -181,8 +168,6 @@ namespace App_Clinica.Views
                         cmbEspecialidad.SelectedIndex = -1;
                         enEdicion = false;
                         idEnEdicion = null;
-                        idMedico = new AutenticacionService().GenerarIdMedico();
-                        CargarMedicosDesdeBD();
                     }
                 }
                 catch (Exception ex)
@@ -192,6 +177,7 @@ namespace App_Clinica.Views
                 }
             }
         }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
@@ -247,34 +233,22 @@ namespace App_Clinica.Views
                 MessageBox.Show("Seleccione una fila para cambiar el estado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            DataGridViewRow filaSeleccionada = dgvMedico.SelectedRows[0];
-            object valorId = filaSeleccionada.Cells["Id"].Value;
-            if (valorId == null || valorId == DBNull.Value)
-            {
-                MessageBox.Show("La fila seleccionada no tiene un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string id = valorId.ToString();
-            string estadoActual = filaSeleccionada.Cells["Estado"].Value.ToString();
+
+            string id = dgvMedico.SelectedRows[0].Cells["Id"].Value.ToString();
+            string estadoActual = dgvMedico.SelectedRows[0].Cells["Estado"].Value.ToString();
             string nuevoEstado = estadoActual == "1" ? "0" : "1";
+
             using (SqlConnection conn = new Conexion().AbrirConexion())
             {
-                string sql = @"
-                    UPDATE Medico
-                    SET Estado = @Estado
-                    WHERE ID_Medico = @IdMedico;
-                ";
+                string sql = @"UPDATE Medico SET Estado = @Estado WHERE ID_Medico = @IdMedico;";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Estado", nuevoEstado);
                     cmd.Parameters.AddWithValue("@IdMedico", id);
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
+                    try { cmd.ExecuteNonQuery(); }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cambiar el estado en BD: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al cambiar estado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -289,19 +263,14 @@ namespace App_Clinica.Views
                 MessageBox.Show("Seleccione una fila para editar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            DataGridViewRow filaSeleccionada = dgvMedico.SelectedRows[0];
-            object valorId = filaSeleccionada.Cells["Id"].Value;
-            if (valorId == null || valorId == DBNull.Value)
-            {
-                MessageBox.Show("La fila seleccionada no tiene un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            idEnEdicion = valorId.ToString();
-            txtNombres.Text = filaSeleccionada.Cells["Nombres"].Value.ToString();
-            txtApellidos.Text = filaSeleccionada.Cells["Apellidos"].Value.ToString();
-            txtCorreo.Text = filaSeleccionada.Cells["Correo"].Value.ToString();
-            txtTelefono.Text = filaSeleccionada.Cells["Telefono"].Value.ToString();
-            cmbEspecialidad.SelectedValue = filaSeleccionada.Cells["ID_Especialidad"].Value.ToString();
+
+            DataGridViewRow fila = dgvMedico.SelectedRows[0];
+            idEnEdicion = fila.Cells["Id"].Value.ToString();
+            txtNombres.Text = fila.Cells["Nombres"].Value.ToString();
+            txtApellidos.Text = fila.Cells["Apellidos"].Value.ToString();
+            txtCorreo.Text = fila.Cells["Correo"].Value.ToString();
+            txtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
+            cmbEspecialidad.SelectedValue = fila.Cells["ID_Especialidad"].Value.ToString();
             enEdicion = true;
             txtNombres.Focus();
         }

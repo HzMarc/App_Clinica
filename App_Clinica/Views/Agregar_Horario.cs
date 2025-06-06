@@ -1,4 +1,7 @@
-﻿using System;
+﻿using App_Clinica.DataAccess;
+using App_Clinica.Services;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App_Clinica.Services;
 
 
 namespace App_Clinica.Views
@@ -17,10 +19,12 @@ namespace App_Clinica.Views
     {
 
         private readonly string idMedicoAsignado;
+        private string idMedico;
         public Agregar_Horario(string idMedico)
         {
             InitializeComponent();
             this.idMedicoAsignado = idMedico;
+            this.idMedico = idMedico;
             CargarHorasLaborales();
         }
 
@@ -33,7 +37,13 @@ namespace App_Clinica.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string idMedico = this.idMedicoAsignado;
+          
+            if (!chkLunes.Checked && !chkMartes.Checked && !chkMiercoles.Checked && !chkJueves.Checked &&
+                !chkViernes.Checked && !chkSabado.Checked && !chkDomingo.Checked)
+            {
+                MessageBox.Show("Seleccione al menos un día para guardar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             try
             {
