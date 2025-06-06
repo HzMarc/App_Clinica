@@ -123,6 +123,16 @@ namespace App_Clinica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ElbinHome {
+            get {
+                object obj = ResourceManager.GetObject("ElbinHome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Eye {
             get {
                 object obj = ResourceManager.GetObject("Eye", resourceCulture);
@@ -186,6 +196,16 @@ namespace App_Clinica.Properties {
         internal static System.Drawing.Bitmap Heart_Monitor2 {
             get {
                 object obj = ResourceManager.GetObject("Heart Monitor2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Home {
+            get {
+                object obj = ResourceManager.GetObject("Home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +366,16 @@ namespace App_Clinica.Properties {
         internal static System.Drawing.Bitmap Menuu {
             get {
                 object obj = ResourceManager.GetObject("Menuu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mrdHome {
+            get {
+                object obj = ResourceManager.GetObject("mrdHome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

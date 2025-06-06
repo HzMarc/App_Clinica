@@ -460,7 +460,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(227, 242, 253);
             pictureBox1.Image = Properties.Resources.Stethoscope;
-            pictureBox1.Location = new Point(366, 16);
+            pictureBox1.Location = new Point(616, 13);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(78, 70);
             pictureBox1.TabIndex = 29;
@@ -472,7 +472,7 @@
             label10.BackColor = Color.FromArgb(227, 242, 253);
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(25, 118, 210);
-            label10.Location = new Point(325, 89);
+            label10.Location = new Point(575, 86);
             label10.Name = "label10";
             label10.Size = new Size(165, 25);
             label10.TabIndex = 10;

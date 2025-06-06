@@ -312,7 +312,7 @@
             label1.BackColor = Color.FromArgb(227, 242, 253);
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(25, 118, 210);
-            label1.Location = new Point(215, 100);
+            label1.Location = new Point(503, 100);
             label1.Name = "label1";
             label1.Size = new Size(136, 21);
             label1.TabIndex = 0;
@@ -321,7 +321,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Doctor_Skin_Type_2;
-            pictureBox1.Location = new Point(238, 10);
+            pictureBox1.Location = new Point(526, 10);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(83, 87);
             pictureBox1.TabIndex = 1;
