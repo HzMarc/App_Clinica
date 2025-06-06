@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            btnVertabla = new Button();
+            btnEditar = new Button();
+            btnEstado = new Button();
+            dgvPaciente = new DataGridView();
             dtpNacimiento = new DateTimePicker();
             txtCorreo = new TextBox();
             label12 = new Label();
@@ -60,6 +62,7 @@
             pictureBox1 = new PictureBox();
             label10 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPaciente).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -68,7 +71,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnVertabla);
+            panel1.Controls.Add(btnEditar);
+            panel1.Controls.Add(btnEstado);
+            panel1.Controls.Add(dgvPaciente);
             panel1.Controls.Add(dtpNacimiento);
             panel1.Controls.Add(txtCorreo);
             panel1.Controls.Add(label12);
@@ -98,24 +103,44 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(809, 529);
+            panel1.Size = new Size(1172, 547);
             panel1.TabIndex = 0;
             // 
-            // btnVertabla
+            // btnEditar
             // 
-            btnVertabla.BackColor = Color.Gray;
-            btnVertabla.FlatAppearance.BorderSize = 0;
-            btnVertabla.FlatStyle = FlatStyle.Flat;
-            btnVertabla.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnVertabla.ForeColor = Color.White;
-            btnVertabla.Image = Properties.Resources.Insert_Table;
-            btnVertabla.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVertabla.Location = new Point(538, 477);
-            btnVertabla.Name = "btnVertabla";
-            btnVertabla.Size = new Size(243, 26);
-            btnVertabla.TabIndex = 31;
-            btnVertabla.Text = "Ver tabla";
-            btnVertabla.UseVisualStyleBackColor = false;
+            btnEditar.BackColor = Color.DimGray;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(876, 502);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(90, 33);
+            btnEditar.TabIndex = 33;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEstado
+            // 
+            btnEstado.BackColor = Color.DimGray;
+            btnEstado.FlatStyle = FlatStyle.Flat;
+            btnEstado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnEstado.ForeColor = Color.White;
+            btnEstado.Location = new Point(713, 502);
+            btnEstado.Name = "btnEstado";
+            btnEstado.Size = new Size(142, 33);
+            btnEstado.TabIndex = 32;
+            btnEstado.Text = "Modificar estado";
+            btnEstado.UseVisualStyleBackColor = false;
+            btnEstado.Click += btnEstado_Click;
+            // 
+            // dgvPaciente
+            // 
+            dgvPaciente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPaciente.Location = new Point(714, 159);
+            dgvPaciente.Name = "dgvPaciente";
+            dgvPaciente.Size = new Size(660, 337);
+            dgvPaciente.TabIndex = 31;
             // 
             // dtpNacimiento
             // 
@@ -126,7 +151,7 @@
             dtpNacimiento.CalendarTrailingForeColor = Color.LightGray;
             dtpNacimiento.Location = new Point(141, 392);
             dtpNacimiento.Name = "dtpNacimiento";
-            dtpNacimiento.Size = new Size(247, 23);
+            dtpNacimiento.Size = new Size(159, 23);
             dtpNacimiento.TabIndex = 28;
             // 
             // txtCorreo
@@ -136,7 +161,7 @@
             txtCorreo.ForeColor = Color.DimGray;
             txtCorreo.Location = new Point(141, 477);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(247, 23);
+            txtCorreo.Size = new Size(159, 23);
             txtCorreo.TabIndex = 27;
             // 
             // label12
@@ -159,7 +184,7 @@
             cmbGenero.Items.AddRange(new object[] { "Masculino ", "Femenino" });
             cmbGenero.Location = new Point(141, 437);
             cmbGenero.Name = "cmbGenero";
-            cmbGenero.Size = new Size(247, 23);
+            cmbGenero.Size = new Size(159, 23);
             cmbGenero.TabIndex = 25;
             // 
             // label11
@@ -184,7 +209,7 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Image = Properties.Resources.Save;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(666, 440);
+            btnGuardar.Location = new Point(560, 439);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(115, 33);
             btnGuardar.TabIndex = 22;
@@ -203,7 +228,7 @@
             btnNuevo.ForeColor = Color.White;
             btnNuevo.Image = Properties.Resources.Task;
             btnNuevo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNuevo.Location = new Point(538, 440);
+            btnNuevo.Location = new Point(432, 439);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(115, 33);
             btnNuevo.TabIndex = 21;
@@ -218,7 +243,7 @@
             cmbTipoSangre.ForeColor = Color.DimGray;
             cmbTipoSangre.FormattingEnabled = true;
             cmbTipoSangre.Items.AddRange(new object[] { "O+", "O-", "A+ ", "A- ", "B+", "B-", "AB+", "AB-" });
-            cmbTipoSangre.Location = new Point(542, 181);
+            cmbTipoSangre.Location = new Point(436, 180);
             cmbTipoSangre.Name = "cmbTipoSangre";
             cmbTipoSangre.Size = new Size(239, 23);
             cmbTipoSangre.TabIndex = 20;
@@ -228,7 +253,7 @@
             txtEnfermedades.BackColor = Color.WhiteSmoke;
             txtEnfermedades.BorderStyle = BorderStyle.FixedSingle;
             txtEnfermedades.ForeColor = Color.DimGray;
-            txtEnfermedades.Location = new Point(538, 351);
+            txtEnfermedades.Location = new Point(432, 350);
             txtEnfermedades.Multiline = true;
             txtEnfermedades.Name = "txtEnfermedades";
             txtEnfermedades.Size = new Size(241, 83);
@@ -239,7 +264,7 @@
             txtAlergias.BackColor = Color.WhiteSmoke;
             txtAlergias.BorderStyle = BorderStyle.FixedSingle;
             txtAlergias.ForeColor = Color.DimGray;
-            txtAlergias.Location = new Point(540, 226);
+            txtAlergias.Location = new Point(434, 225);
             txtAlergias.Multiline = true;
             txtAlergias.Name = "txtAlergias";
             txtAlergias.Size = new Size(241, 99);
@@ -251,7 +276,7 @@
             txtAltura.BorderStyle = BorderStyle.FixedSingle;
             txtAltura.Location = new Point(141, 351);
             txtAltura.Name = "txtAltura";
-            txtAltura.Size = new Size(247, 23);
+            txtAltura.Size = new Size(159, 23);
             txtAltura.TabIndex = 15;
             // 
             // txtPeso
@@ -261,7 +286,7 @@
             txtPeso.ForeColor = Color.DimGray;
             txtPeso.Location = new Point(141, 305);
             txtPeso.Name = "txtPeso";
-            txtPeso.Size = new Size(247, 23);
+            txtPeso.Size = new Size(159, 23);
             txtPeso.TabIndex = 14;
             // 
             // txtTelefono
@@ -271,7 +296,7 @@
             txtTelefono.ForeColor = Color.DimGray;
             txtTelefono.Location = new Point(141, 265);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(247, 23);
+            txtTelefono.Size = new Size(159, 23);
             txtTelefono.TabIndex = 13;
             // 
             // txtApellidos
@@ -281,7 +306,7 @@
             txtApellidos.ForeColor = Color.DimGray;
             txtApellidos.Location = new Point(141, 223);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(247, 23);
+            txtApellidos.Size = new Size(159, 23);
             txtApellidos.TabIndex = 12;
             // 
             // txtNombres
@@ -291,7 +316,7 @@
             txtNombres.ForeColor = Color.DimGray;
             txtNombres.Location = new Point(141, 178);
             txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(247, 23);
+            txtNombres.Size = new Size(159, 23);
             txtNombres.TabIndex = 11;
             // 
             // panel2
@@ -301,7 +326,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(809, 26);
+            panel2.Size = new Size(1172, 26);
             panel2.TabIndex = 9;
             // 
             // btnSalir
@@ -313,7 +338,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.Gray;
-            btnSalir.Location = new Point(781, 0);
+            btnSalir.Location = new Point(1144, 0);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(28, 26);
             btnSalir.TabIndex = 1;
@@ -326,7 +351,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(25, 118, 210);
-            label9.Location = new Point(412, 349);
+            label9.Location = new Point(306, 348);
             label9.Name = "label9";
             label9.Size = new Size(119, 21);
             label9.TabIndex = 8;
@@ -337,7 +362,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label8.ForeColor = Color.FromArgb(25, 118, 210);
-            label8.Location = new Point(462, 228);
+            label8.Location = new Point(356, 227);
             label8.Name = "label8";
             label8.Size = new Size(72, 21);
             label8.TabIndex = 7;
@@ -348,7 +373,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(25, 118, 210);
-            label7.Location = new Point(412, 179);
+            label7.Location = new Point(306, 178);
             label7.Name = "label7";
             label7.Size = new Size(124, 21);
             label7.TabIndex = 6;
@@ -426,9 +451,9 @@
             panel3.BackColor = Color.FromArgb(227, 242, 253);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label10);
-            panel3.Location = new Point(0, 21);
+            panel3.Location = new Point(0, 23);
             panel3.Name = "panel3";
-            panel3.Size = new Size(809, 132);
+            panel3.Size = new Size(1386, 130);
             panel3.TabIndex = 30;
             // 
             // pictureBox1
@@ -452,13 +477,12 @@
             label10.Size = new Size(165, 25);
             label10.TabIndex = 10;
             label10.Text = "Agregar Paciente";
-            label10.Click += label10_Click;
             // 
             // Agregar_Paciente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(809, 529);
+            ClientSize = new Size(1172, 547);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Agregar_Paciente";
@@ -466,6 +490,7 @@
             Text = "Agregar_Paciente";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPaciente).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -505,6 +530,8 @@
         private Button btnSalir;
         private PictureBox pictureBox1;
         private Panel panel3;
-        private Button btnVertabla;
+        private DataGridView dgvPaciente;
+        private Button btnEditar;
+        private Button btnEstado;
     }
 }

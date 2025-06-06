@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            btnVertabla = new Button();
             btnNew = new Button();
             btnGuardar = new Button();
             pnlDomingo = new Panel();
@@ -75,6 +74,7 @@
             label2 = new Label();
             chkLunes = new CheckBox();
             panel2 = new Panel();
+            panel3 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pnltool = new Panel();
@@ -95,7 +95,6 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(btnVertabla);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(pnlDomingo);
@@ -110,24 +109,8 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(613, 710);
+            panel1.Size = new Size(588, 710);
             panel1.TabIndex = 0;
-            // 
-            // btnVertabla
-            // 
-            btnVertabla.BackColor = Color.Gray;
-            btnVertabla.FlatAppearance.BorderSize = 0;
-            btnVertabla.FlatStyle = FlatStyle.Flat;
-            btnVertabla.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnVertabla.ForeColor = Color.White;
-            btnVertabla.Image = Properties.Resources.Insert_Table;
-            btnVertabla.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVertabla.Location = new Point(405, 653);
-            btnVertabla.Name = "btnVertabla";
-            btnVertabla.Size = new Size(175, 33);
-            btnVertabla.TabIndex = 103;
-            btnVertabla.Text = "    Ver tabla";
-            btnVertabla.UseVisualStyleBackColor = false;
             // 
             // btnNew
             // 
@@ -154,7 +137,7 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Image = Properties.Resources.Save;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(217, 653);
+            btnGuardar.Location = new Point(383, 650);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(175, 33);
             btnGuardar.TabIndex = 101;
@@ -172,7 +155,7 @@
             pnlDomingo.Controls.Add(chkDomingo);
             pnlDomingo.Location = new Point(25, 592);
             pnlDomingo.Name = "pnlDomingo";
-            pnlDomingo.Size = new Size(555, 52);
+            pnlDomingo.Size = new Size(533, 52);
             pnlDomingo.TabIndex = 100;
             // 
             // label14
@@ -232,7 +215,7 @@
             pnlSabado.Controls.Add(chkSabado);
             pnlSabado.Location = new Point(25, 523);
             pnlSabado.Name = "pnlSabado";
-            pnlSabado.Size = new Size(555, 52);
+            pnlSabado.Size = new Size(533, 52);
             pnlSabado.TabIndex = 99;
             // 
             // label12
@@ -292,7 +275,7 @@
             pnlViernes.Controls.Add(chkViernes);
             pnlViernes.Location = new Point(25, 448);
             pnlViernes.Name = "pnlViernes";
-            pnlViernes.Size = new Size(555, 52);
+            pnlViernes.Size = new Size(533, 52);
             pnlViernes.TabIndex = 98;
             // 
             // label10
@@ -352,7 +335,7 @@
             pnlJueves.Controls.Add(chkJueves);
             pnlJueves.Location = new Point(25, 377);
             pnlJueves.Name = "pnlJueves";
-            pnlJueves.Size = new Size(555, 52);
+            pnlJueves.Size = new Size(533, 52);
             pnlJueves.TabIndex = 97;
             // 
             // label8
@@ -412,7 +395,7 @@
             pnlMiercoles.Controls.Add(chkMiercoles);
             pnlMiercoles.Location = new Point(25, 310);
             pnlMiercoles.Name = "pnlMiercoles";
-            pnlMiercoles.Size = new Size(555, 52);
+            pnlMiercoles.Size = new Size(533, 52);
             pnlMiercoles.TabIndex = 96;
             // 
             // label6
@@ -472,7 +455,7 @@
             pnlMartes.Controls.Add(chkMartes);
             pnlMartes.Location = new Point(25, 242);
             pnlMartes.Name = "pnlMartes";
-            pnlMartes.Size = new Size(555, 52);
+            pnlMartes.Size = new Size(533, 52);
             pnlMartes.TabIndex = 95;
             // 
             // label4
@@ -532,7 +515,7 @@
             pmlLunes.Controls.Add(chkLunes);
             pmlLunes.Location = new Point(25, 173);
             pmlLunes.Name = "pmlLunes";
-            pmlLunes.Size = new Size(555, 52);
+            pmlLunes.Size = new Size(533, 52);
             pmlLunes.TabIndex = 12;
             // 
             // label3
@@ -585,13 +568,22 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(227, 242, 253);
+            panel2.Controls.Add(panel3);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 29);
             panel2.Name = "panel2";
-            panel2.Size = new Size(613, 124);
+            panel2.Size = new Size(588, 124);
             panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(233, 233, 233);
+            panel3.Location = new Point(616, 122);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(694, 559);
+            panel3.TabIndex = 103;
             // 
             // label1
             // 
@@ -620,7 +612,7 @@
             pnltool.Dock = DockStyle.Top;
             pnltool.Location = new Point(0, 0);
             pnltool.Name = "pnltool";
-            pnltool.Size = new Size(613, 29);
+            pnltool.Size = new Size(588, 29);
             pnltool.TabIndex = 10;
             // 
             // btnSalir
@@ -632,7 +624,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.Gray;
-            btnSalir.Location = new Point(582, 0);
+            btnSalir.Location = new Point(557, 0);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(31, 29);
             btnSalir.TabIndex = 0;
@@ -644,7 +636,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(613, 710);
+            ClientSize = new Size(588, 710);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Agregar_Horario";
@@ -722,8 +714,8 @@
         private ComboBox cmbJuevesHasta;
         private ComboBox cmbJuevesDesde;
         private Label label9;
-        private Button btnVertabla;
         private Button btnNew;
         private Button btnGuardar;
+        private Panel panel3;
     }
 }

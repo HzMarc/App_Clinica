@@ -15,7 +15,7 @@ namespace App_Clinica.Views
 
     public partial class Agregar_Horario : Form
     {
-        
+
         private readonly string idMedicoAsignado;
         public Agregar_Horario(string idMedico)
         {
@@ -94,6 +94,5 @@ namespace App_Clinica.Views
             cmbDomingoDesde.Items.AddRange(horas.ToArray());
             cmbDomingoHasta.Items.AddRange(horas.ToArray());
         }
-
     }
 }
